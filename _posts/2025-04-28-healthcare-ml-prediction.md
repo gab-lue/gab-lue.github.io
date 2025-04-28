@@ -1,8 +1,9 @@
 ---
+layout: post
 title: "Predicting Healthcare Agency Performance Using Machine Learning"
 description: "A detailed walkthrough of a data science project to predict Medicare agency performance scores using real-world healthcare data."
 date: 2025-04-28
-author: "Your Name"
+author: "Gabriel Luepke"
 ---
 
 # Predicting Healthcare Agency Performance Using Machine Learning
