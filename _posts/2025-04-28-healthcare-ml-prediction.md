@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/45a97e9c-ef3d-4cde-aeed-32b6765d76cb)
-
 
 ---
 layout: post
@@ -8,6 +6,10 @@ description: "A data science case study that predicts Medicare agency performanc
 date: 2025-04-28
 author: "gabriel luepke"
 ---
+
+![image](https://github.com/user-attachments/assets/45a97e9c-ef3d-4cde-aeed-32b6765d76cb)
+
+
 ![image](https://github.com/user-attachments/assets/28e0c7ca-e6aa-410a-a0bd-c837148fcf96)
 
 # Can We Predict Medicare Scores Before They're Published?  
