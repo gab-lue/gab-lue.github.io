@@ -3,7 +3,7 @@ layout: post
 title: "Predicting Healthcare Agency Performance Using Machine Learning"
 description: "A concise overview of using machine learning to predict Medicare agency performance scores with real-world data."
 date: 2025-04-28
-author: "gabriel luepke"
+author: "Gabriel Lüpke"
 ---
 
 # Predicting Healthcare Agency Performance Using Machine Learning
@@ -78,4 +78,4 @@ While this is just a proof of concept, it demonstrates how **data science can em
 
 ---
 
-*Want the full notebook or data source? [View the project on GitHub](#).*  
+*Want the full notebook or data source? [View the project on GitHub](#).*
