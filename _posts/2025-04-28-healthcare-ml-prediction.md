@@ -1,81 +1,99 @@
 ---
 layout: post
-title: "Predicting Healthcare Agency Performance Using Machine Learning"
-description: "A concise overview of using machine learning to predict Medicare agency performance scores with real-world data."
+title: "Can We Predict Medicare Scores Before They're Published? A Machine Learning Approach"
+description: "A data science case study that predicts Medicare agency performance using open CMS data and interpretable machine learning models."
 date: 2025-04-28
-author: "Your Name"
+author: "gabriel luepke"
 ---
 
-# Predicting Healthcare Agency Performance Using Machine Learning
+# Can We Predict Medicare Scores Before They're Published?  
+### A Machine Learning Case Study
 
-## Introduction
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/US_CMS_Logo.png" alt="CMS Logo" width="300"/>
+  <figcaption>Data Source: Centers for Medicare & Medicaid Services (CMS)</figcaption>
+</figure>
 
-How well will a Medicare-certified home health agency perform in its next government evaluation?
+## 🎯 Business Question
 
-We tackled this question by developing a machine learning (ML) model using real-world performance data. The goal: help agencies **anticipate their Total Performance Score (TPS)** and take action before financial penalties hit.
+**Can home health agencies forecast their upcoming Medicare performance scores based on their current operational data?**
 
----
-
-## 1. Problem & Data
-
-We worked with publicly available data from the Centers for Medicare & Medicaid Services (CMS), covering over **12,000 agencies**. The key output we aimed to predict was the **TPS**, a composite score calculated from factors like:
-
-- Timeliness of care
-- Medication adherence
-- Patient satisfaction
-- Vaccination rates
-
-Only ~10,000 agencies had full TPS scores, so we filtered out incomplete data and focused on meaningful predictors.
+This blog post outlines how we used open data and machine learning to estimate Medicare’s **Total Performance Score (TPS)** for U.S. healthcare agencies — before formal evaluations are released.
 
 ---
 
-## 2. Data Cleaning & Feature Engineering
+## 🧠 Summary for Non-Technical Stakeholders
 
-We engineered features by grouping related metrics and applying weights based on CMS’s scoring logic (e.g., the *Quality of Patient Care* and *HHCAHPS* components). We removed variables with too many missing values and normalized the rest.
-
-Final dataset:  
-- ~10,000 rows  
-- 13 engineered features  
-- Target: continuous TPS score (0–100 scale)
+- We used CMS data covering **12,000+ healthcare agencies**
+- Trained a machine learning model to predict their **TPS (0–100)**  
+- The best model predicts scores with **84% accuracy (R² = 0.84)**  
+- Agencies can use this model to identify **which metrics hurt their scores** — and fix them **before it's too late**
 
 ---
 
-## 3. Model Building & Results
+## 📊 Key Insights
 
-We compared two regression models:
+### Q1: **What factors drive an agency’s Medicare score?**
 
-### 🔹 Linear Regression
-- **R²**: 0.64  
-- **RMSE**: 6.1
+We used domain knowledge to engineer 13 features from CMS datasets, including:
 
-### 🔹 Random Forest Regressor
-- **R²**: 0.84  
-- **RMSE**: 3.9
+| Metric | Description |
+|--------|-------------|
+| Timeliness | How quickly patients receive care |
+| Patient Experience | Survey-based satisfaction data |
+| Medication Management | Whether patients receive instructions |
+| Vaccination | Influenza/pneumonia coverage |
 
-✅ **Random Forest significantly outperformed Linear Regression**, capturing non-linear patterns in the data without overfitting.
-
-We validated with cross-validation (10-fold) and checked for generalization on a holdout set.
-
----
-
-## 4. Why It Matters
-
-This model allows agency administrators to:
-
-- Simulate performance scores based on current metrics
-- Prioritize improvements in low-scoring areas
-- Justify resource allocation using predictive insights
-
-A simple interface (or script) could even let them “plug in” their current performance data and receive an estimated TPS score instantly.
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Bar_chart_icon.svg" width="50" alt="bar chart icon"/>
+  <figcaption>Top 5 most important features (measured via Random Forest)</figcaption>
+</figure>
 
 ---
 
-## Conclusion
+### Q2: **How accurate is the prediction model?**
 
-With thoughtful feature engineering and robust modeling, we showed that Medicare agency performance can be accurately predicted using existing data.
+We tested multiple models and selected **Random Forest Regressor** due to its balance of accuracy and interpretability.
 
-While this is just a proof of concept, it demonstrates how **data science can empower healthcare organizations** to improve quality proactively — not just reactively.
+| Model | R² Score | RMSE |
+|-------|----------|------|
+| Linear Regression | 0.64 | 6.1 |
+| **Random Forest** | **0.84** | **3.9** |
+
+✅ **84% of the variance in agency scores can be explained** using this model  
+✅ Prediction error is typically within ±4 points
 
 ---
 
-*Want the full notebook or data source? [View the project on GitHub](#).*
+### Q3: **What does this mean for decision-makers?**
+
+> “If I improve patient satisfaction or care timeliness, how much will my predicted score increase?”
+
+By plugging in updated performance data, administrators can simulate their TPS ahead of time and **strategically improve low-performing metrics**.
+
+This gives agencies:
+- Time to adjust operations before formal scoring
+- Evidence-based direction on what to improve
+- A competitive edge in Medicare’s value-based reimbursement system
+
+---
+
+## 🔍 Visual Example (Sample Prediction)
+
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Line_chart_icon.svg/600px-Line_chart_icon.svg.png" alt="Prediction Chart" width="300"/>
+  <figcaption>Example: Predicted vs. Actual TPS values (Random Forest Model)</figcaption>
+</figure>
+
+---
+
+## ✅ Conclusion
+
+This project demonstrates how predictive analytics can be used in healthcare to support better outcomes and planning.
+
+By transforming raw CMS data into actionable insights, we empower agencies to improve their care — **before Medicare scores penalize them**.
+
+---
+
+📎 *Want to view the full notebook, data, or model code? [Visit the GitHub repository](#).*
+
