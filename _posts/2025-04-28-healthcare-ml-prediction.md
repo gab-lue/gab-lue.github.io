@@ -16,7 +16,7 @@ author: "gabriel luepke"
 ### A Machine Learning Case Study
 
 <figure>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/US_CMS_Logo.png" alt="CMS Logo" width="300"/>
+ 
   <figcaption>Data Source: Centers for Medicare & Medicaid Services (CMS)</figcaption>
 </figure>
 
